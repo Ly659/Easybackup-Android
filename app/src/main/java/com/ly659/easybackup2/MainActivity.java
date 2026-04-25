@@ -8,6 +8,31 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * 用于集中管理申请的权限，包含所有可以请求的封装好的权限。
+ * 可以直接传入给askPermission方法，向用户请求权限。
+ */
+class Permissions {
+    /**
+     * 权限的封装类，包括权限常量名和请求代码。
+     */
+    static class Permission {
+        public final String permissionName;
+        public final int requestCode;
+
+        public Permission(String permissionName, int requestCode) {
+            this.permissionName = permissionName;
+            this.requestCode = requestCode;
+        }
+    }
+
+    // 所有可能申请的的权限类型
+    public static final Permission PERMISSION_NETWORK =
+            new Permission(Manifest.permission.INTERNET, 100);              // 网络权限
+    public static final Permission PERMISSION_STORAGE_READ =
+            new Permission(Manifest.permission.READ_EXTERNAL_STORAGE, 101); // 文件读取权限
+}
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
