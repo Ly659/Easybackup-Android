@@ -35,6 +35,21 @@ class Permissions {
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * 向用户请求指定的权限。
+     * @param permission 指定权限
+     * @return 权限是否成功获取。若成功获取（用户授权），返回true；否则返回false。
+     * 注：若权限已经拥有，无需再请求，返回true。
+     */
+    private boolean askPermission(Permissions.Permission permission) {
+        // 检查权限是否已经拥有
+        if (ActivityCompat.checkSelfPermission(this, permission.permissionName) == PackageManager.PERMISSION_GRANTED) return true;
+        // 向用户请求权限
+        ActivityCompat.requestPermissions(this, new String[] {permission.permissionName}, permission.requestCode);
+        // 再次检查权限是否获得，若成功获得则返回true，否则返回false
+        return ActivityCompat.checkSelfPermission(this, permission.permissionName) == PackageManager.PERMISSION_GRANTED;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
