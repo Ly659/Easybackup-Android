@@ -4,4 +4,10 @@
     <!--主界面文字-->
     <string name="text_welcome">欢迎使用 Easybackup ！</string>
     <string name="button_start">立即开始</string>
+
+    <!--连接配置界面（SetConnectActivity）-->
+    <string name="text_welcome_A2">配置连接参数</string>
+    <string name="text_ip_A2">PC端IP地址：192.168.</string>
+    <string name="text_port_A2">PC端端口号：</string>
+    <string name="button_continue_A2">确定</string>
 </resources>

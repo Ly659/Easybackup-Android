@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetConnectActivity">
+
+    <ImageView
+        android:id="@+id/image_title"
+        android:layout_width="221dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="202dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="60dp"
+        android:text="@string/text_welcome_A2"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_title" />
+
+    <EditText
+        android:id="@+id/input_ip1"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/input_ip2"
+        app:layout_constraintStart_toEndOf="@+id/text_ip"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <EditText
+        android:id="@+id/input_ip2"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <TextView
+        android:id="@+id/text_ip"
+        android:layout_width="182dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/text_ip_A2"
+        android:textAlignment="viewStart"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+    <TextView
+        android:id="@+id/text_port"
+        android:layout_width="182dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/text_port_A2"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ip" />
+
+    <EditText
+        android:id="@+id/input_port"
+        android:layout_width="140dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_port"
+        tools:layout_editor_absoluteY="496dp" />
+
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="113dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/button_continue_A2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_port" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
