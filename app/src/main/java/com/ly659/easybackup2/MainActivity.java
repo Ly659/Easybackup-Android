@@ -68,6 +68,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // 创建Activity启动器，用于启动SetConnectActivity
+        final ActivityResultLauncher<Intent> luncher_SetConnect = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                o -> {
+                    if (o.getResultCode() == RESULT_OK) {
+                        // 获取Activity的返回值数据
+                        Intent returnData = o.getData();
+                        // 取出序列化对象
+                        assert returnData != null;
+                        SetConnectPackage returnPack = returnData.getParcelableExtra("SetConnect_UserChoice");
+
+                    }
+                }
+        );
+
         // 绑定UI控件
         Button button_start = findViewById(R.id.button_start);
         button_start.setOnClickListener((v -> {
