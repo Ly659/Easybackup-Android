@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Easybackup</string>
+    <string name="app_name" translatable="false">Easybackup</string>
 
     <!--主界面文字-->
     <string name="text_welcome">欢迎使用 Easybackup ！</string>
@@ -11,4 +11,9 @@
     <string name="text_port_A2">PC端端口号：</string>
     <string name="button_continue_A2">下一步</string>
     <string name="text_tips_A2">您可以在PC端应用程序上找到相关的连接信息。</string>
+
+    <string name="text_title_A3">配置要备份的文件类型</string>
+    <string name="button_finish_A3">尝试连接</string>
+    <string name="fileType_photos">图片</string>
+    <string name="fileType_videos">视频</string>
 </resources>
