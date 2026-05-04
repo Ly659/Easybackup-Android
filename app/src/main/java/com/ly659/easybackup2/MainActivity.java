@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         // 创建Activity启动器，用于启动SetConnectActivity
         final ActivityResultLauncher<Intent> luncher_SetConnect = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
+                // Activity结束并返回数据时会执行此lambda
                 o -> {
                     if (o.getResultCode() == RESULT_OK) {
                         // 获取Activity的返回值数据
@@ -86,19 +87,9 @@ public class MainActivity extends AppCompatActivity {
         // 绑定UI控件
         Button button_start = findViewById(R.id.button_start);
         button_start.setOnClickListener((v -> {
-            final ActivityResultLauncher<Intent> luncher = registerForActivityResult(
-                    new ActivityResultContracts.StartActivityForResult(),
-                    o -> {
-                        if (o.getResultCode() == RESULT_OK) {
-                            // 获取Activity的返回值数据
-                            Intent returnData = o.getData();
-                            // 取出序列化对象
-                            assert returnData != null;
-                            SetConnectPackage returnPack = returnData.getParcelableExtra("SetConnect_UserChoice");
-
-                        }
-                    }
-            );
+            // 点击按钮时，启动SetConnectActivity
+            Intent intent = new Intent(this, SetConnectActivity.class);
+            luncher_SetConnect.launch(intent);
         }));
     }
 }
