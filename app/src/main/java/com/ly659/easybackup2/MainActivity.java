@@ -1,10 +1,14 @@
 package com.ly659.easybackup2;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
@@ -63,5 +67,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // 绑定UI控件
+        Button button_start = findViewById(R.id.button_start);
+        button_start.setOnClickListener((v -> {
+            final ActivityResultLauncher<Intent> luncher = registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    o -> {
+                        if (o.getResultCode() == RESULT_OK) {
+                            // 获取Activity的返回值数据
+                            Intent returnData = o.getData();
+                            // 取出序列化对象
+                            assert returnData != null;
+                            SetConnectPackage returnPack = returnData.getParcelableExtra("SetConnect_UserChoice");
+
+                        }
+                    }
+            );
+        }));
     }
 }
