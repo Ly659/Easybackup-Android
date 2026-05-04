@@ -107,4 +107,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_port" />
 
+    <TextView
+        android:id="@+id/text_tips"
+        android:layout_width="249dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/text_tips_A2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_port" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
