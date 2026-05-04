@@ -9,5 +9,6 @@
     <string name="text_welcome_A2">配置连接参数</string>
     <string name="text_ip_A2">PC端IP地址：192.168.</string>
     <string name="text_port_A2">PC端端口号：</string>
-    <string name="button_continue_A2">确定</string>
+    <string name="button_continue_A2">下一步</string>
+    <string name="text_tips_A2">您可以在PC端应用程序上找到相关的连接信息。</string>
 </resources>
