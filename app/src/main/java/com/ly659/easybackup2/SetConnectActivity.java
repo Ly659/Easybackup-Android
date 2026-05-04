@@ -40,9 +40,9 @@ public class SetConnectActivity extends AppCompatActivity {
                 // 封装，准备传输给MainActivity
                 SetConnectPackage returnPack = new SetConnectPackage("192.168.".concat(getText(input_ip_1).concat(getText(input_ip_2))), getText(input_port));
 
-                Intent intent = new Intent();
-                intent.putExtra("SetConnect_UserChoice", returnPack);
-                setResult(RESULT_OK, intent);
+                Intent intent_return = new Intent();
+                intent_return.putExtra("SetConnect_UserChoice", returnPack);
+                setResult(RESULT_OK, intent_return);
 
                 finish();       // 结束当前Activity，返回上一个Activity（主界面）并传回序列化对象
             } else {
