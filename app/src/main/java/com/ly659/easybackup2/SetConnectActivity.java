@@ -66,6 +66,13 @@ public class SetConnectActivity extends AppCompatActivity {
      */
     private String getText(EditText widget) {return widget.getText().toString();}
 
+
+    private boolean IpUnfair(int ipField) {
+        return ipField < 0 || ipField > 255;
+    }
+    private boolean checkPort(int port) {
+        return port > 0 && port <= 65535;
+    }
     /**
      * 检查用户输入框的所有内容是否合法。
      * @return 检查结果。
@@ -75,11 +82,13 @@ public class SetConnectActivity extends AppCompatActivity {
         if (getText(input_ip_1).isEmpty() || getText(input_ip_2).isEmpty()) return false;
         // 检查端口号输入
         if (getText(input_port).isEmpty()) return false;
-        // 检查输入是否只含有数字
+        // 检查输入是否只含有数字，且数字取值是否合法
         try {
-            Integer.parseInt(getText(input_ip_1));
-            Integer.parseInt(getText(input_ip_2));
-            Integer.parseInt(getText(input_port));
+            if (
+                    IpUnfair(Integer.parseInt(getText(input_ip_1))) ||
+                    IpUnfair(Integer.parseInt(getText(input_ip_2))) ||
+                    !checkPort(Integer.parseInt(getText(input_port)))
+            ) return false;
         } catch (NumberFormatException e) {
             return false;
         }
