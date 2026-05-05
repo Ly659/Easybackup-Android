@@ -11,8 +11,16 @@ public class SetConnectPackage implements Serializable {
     // 主机端口号
     public final String hostPort;
 
-    public SetConnectPackage(String hostIp, String hostPort) {
+    // 用户选择的要备份的文件类型
+    public final boolean fileType_photos;
+    public final boolean fileType_videos;
+
+
+    public SetConnectPackage(String hostIp, String hostPort, boolean fileType_photos, boolean fileType_videos) {
         this.hostIp = hostIp;
         this.hostPort = hostPort;
+
+        this.fileType_photos = fileType_photos;
+        this.fileType_videos = fileType_videos;
     }
 }

@@ -3,6 +3,7 @@ package com.ly659.easybackup2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,17 +29,24 @@ public class SetConnectActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 绑定按钮、输入控件
+        // 绑定按钮、输入等控件
         Button button_continue = findViewById(R.id.button_continue);
         input_ip_1 = findViewById(R.id.input_ip1);
         input_ip_2 = findViewById(R.id.input_ip2);
         input_port = findViewById(R.id.input_port);
+        CheckBox check_photos = findViewById(R.id.check_photos);
+        CheckBox check_videos = findViewById(R.id.check_videos);
 
         button_continue.setOnClickListener(v -> {
             // 首先检查用户输入数据是否合法
             if (checkInputs()) {
                 // 封装，准备传输给MainActivity
-                SetConnectPackage returnPack = new SetConnectPackage("192.168.".concat(getText(input_ip_1).concat(getText(input_ip_2))), getText(input_port));
+                SetConnectPackage returnPack = new SetConnectPackage(
+                        "192.168.".concat(getText(input_ip_1).concat(getText(input_ip_2))),
+                        getText(input_port),
+                        check_photos.isChecked(),       // 复选框是否选中
+                        check_videos.isChecked()
+                        );
 
                 Intent intent_return = new Intent();
                 intent_return.putExtra("SetConnect_UserChoice", returnPack);
