@@ -2,7 +2,6 @@ package com.ly659.easybackup2.Connection.Packages;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * 存储每种文件的类型和总数。
