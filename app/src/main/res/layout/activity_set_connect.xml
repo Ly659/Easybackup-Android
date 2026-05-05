@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/text_title"
-        android:layout_width="202dp"
+        android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="12dp"
@@ -49,11 +49,11 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="433dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,8 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="480dp">
+                android:layout_height="480dp"
+                tools:ignore="UselessParent">
 
                 <TextView
                     android:id="@+id/text_ip"
@@ -82,20 +83,22 @@
 
                 <EditText
                     android:id="@+id/input_ip1"
-                    android:layout_width="76dp"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="number"
+                    android:textAlignment="center"
                     android:translationX="180dp"
                     android:translationY="36dp" />
 
                 <EditText
                     android:id="@+id/input_ip2"
-                    android:layout_width="76dp"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="number"
-                    android:translationX="260dp"
+                    android:textAlignment="center"
+                    android:translationX="230dp"
                     android:translationY="36dp" />
 
                 <TextView
@@ -110,7 +113,7 @@
 
                 <EditText
                     android:id="@+id/input_port"
-                    android:layout_width="176dp"
+                    android:layout_width="116dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="number"
@@ -129,7 +132,7 @@
 
                 <CheckBox
                     android:id="@+id/check_photos"
-                    android:layout_width="322dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fileType_photos"
                     android:translationX="12dp"
@@ -137,11 +140,11 @@
 
                 <CheckBox
                     android:id="@+id/check_videos"
-                    android:layout_width="322dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fileType_videos"
                     android:translationX="12dp"
-                    android:translationY="260dp" />
+                    android:translationY="250dp" />
             </FrameLayout>
         </LinearLayout>
     </ScrollView>
