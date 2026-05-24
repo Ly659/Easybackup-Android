@@ -1,0 +1,40 @@
+package com.ly659.easybackup2.Tools;
+
+import java.io.File;
+
+import java.util.Objects;
+
+
+public class FileHelper {
+
+    /**
+     * 获取当前手机的设备名。
+     * @return 当前手机的设备名
+     */
+    public static String getName_Phone() {
+        return "Xiaomi 5";
+    }
+
+    /**
+     * 获取图片文件的总数。
+     * @return 图片文件的总数
+     */
+    public static int getNum_Photos() {
+        File DCIM_Path = new File("/Storage/emulated/0/DCIM");
+        return Objects.requireNonNull(DCIM_Path.listFiles((dir, name) -> {
+            if (name.endsWith(".jpg")) return true;
+            return false;
+        })).length;
+    }
+
+    /**
+     * 获取所有图片文件的列表。
+     * @return 所有图片文件的列表
+     */
+    public static File[] getFile_Photos() {
+        return Objects.requireNonNull(new File("/Storage/emulated/0/DCIM").listFiles((dir, name) -> {
+            if (name.endsWith(".jpg")) return true;
+            return false;
+        }));
+    }
+}
