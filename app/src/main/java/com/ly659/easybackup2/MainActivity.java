@@ -134,8 +134,9 @@ public class MainActivity extends AppCompatActivity {
                         Intent returnData = o.getData();
                         // 取出序列化对象
                         assert returnData != null;
-                        startConnect(Objects.requireNonNull(returnData.getParcelableExtra("SetConnect_UserChoice")));
-
+                        SetConnectPackage setConnectPackage = (SetConnectPackage) returnData.getSerializableExtra("SetConnect_UserChoice");
+                        assert setConnectPackage != null;
+                        startConnect(setConnectPackage);
                     }
                 }
         );
