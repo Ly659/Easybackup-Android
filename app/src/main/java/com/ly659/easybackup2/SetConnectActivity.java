@@ -42,7 +42,7 @@ public class SetConnectActivity extends AppCompatActivity {
             if (checkInputs()) {
                 // 封装，准备传输给MainActivity
                 SetConnectPackage returnPack = new SetConnectPackage(
-                        "192.168.".concat(getText(input_ip_1).concat(getText(input_ip_2))),
+                        "192.168.".concat(getText(input_ip_1).concat(".").concat(getText(input_ip_2))),
                         getText(input_port),
                         check_photos.isChecked(),       // 复选框是否选中
                         check_videos.isChecked()
