@@ -2,6 +2,7 @@ package com.ly659.easybackup2.Connection.Packages;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 本封装用于存储手机的基本信息（型号等）。
@@ -14,7 +15,7 @@ public final class ConnectionHand implements Serializable {
     private final String phoneName;
     private final String phoneIp;
     private final String appPort;
-    private final TypeInfo[] fileTypes;
+    private final List<TypeInfo> fileTypes;
 
     /**
      * @param phoneName 手机名
@@ -23,7 +24,7 @@ public final class ConnectionHand implements Serializable {
      * @param fileTypes App端将要上传的文件类型及其总数（封装类）
      */
     public ConnectionHand(String phoneName, String phoneIp, String appPort,
-                          TypeInfo[] fileTypes) {
+                          List<TypeInfo> fileTypes) {
         this.phoneName = phoneName;
         this.phoneIp = phoneIp;
         this.appPort = appPort;
@@ -42,7 +43,7 @@ public final class ConnectionHand implements Serializable {
         return appPort;
     }
 
-    public TypeInfo[] fileTypes() {
+    public List<TypeInfo> fileTypes() {
         return fileTypes;
     }
 }
