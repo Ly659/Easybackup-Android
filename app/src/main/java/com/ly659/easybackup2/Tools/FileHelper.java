@@ -20,7 +20,7 @@ public class FileHelper {
      * @return 图片文件的总数
      */
     public static int getNum_Photos() {
-        File DCIM_Path = new File("/Storage/emulated/0/DCIM");
+        File DCIM_Path = new File("/storage/emulated/0/DCIM/Camera");       // 注意！！！路径区分大小写
         return Objects.requireNonNull(DCIM_Path.listFiles((dir, name) -> {
             if (name.endsWith(".jpg")) return true;
             return false;
