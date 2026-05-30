@@ -56,7 +56,14 @@ public final class PhotoPackage implements Serializable {
      */
     @Override
     public String toString() {
-        return filePath.substring(filePath.lastIndexOf("\\"));
+        // 路径的判断（不同系统的分隔符可能不同）
+        if (filePath.lastIndexOf("/") != -1) {
+            return filePath.substring(filePath.lastIndexOf("/"));
+        } else if (filePath.lastIndexOf("\\") != -1) {
+            return filePath.substring(filePath.lastIndexOf("\\"));
+        } else  {
+            return filePath;
+        }
     }
 
     /**
